@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <div class="text-center">
+            <h2>Create Book and Member Details</h2>
+        </div>
+    </div>
+</div>
+<p></p>
+
+<!-- Message block -->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success text-center" role="alert">
+    {{ message }}</div>
+{% endfor %}
+{% endif %}
+<!-- End message block -->
+<form name="formCreate" class="needs-validation" method="POST"
+        action="{% url 'library_management' %}" onsubmit="return validateForm()">
+        {% csrf_token %}
+<div class="container bg-secondary text-white p-5 my-5 border">
+    <h3>Create Book Details</h3>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Book Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="txtBookName" id="txtBookName">
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="txtAuthor" id="txtAuthor">
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Book Number</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="txtBookNumber" id="txtBookNumber">
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="txtCategory" id="txtCategory">
+        </div>
+    </div>
+    <div class="mb-3">
+        <div style="text-align:center">
+            <button class="btn btn-primary" id="btnCustomerSave" type="submit">Save</button>
+            <a href='{% url "library_management" %}' class="btn btn-primary" type="button" id='btnSavebook' value="SaveBook">Cancel</button></a>
+        </div>
+    </div>
+</div>
+</form>
+
+<form name="formCreateMember" class="needs-validation" method="POST"
+        action="{% url 'library_management' %}" onsubmit="return validateFormMember()">
+        {% csrf_token %}
+<div class="container bg-secondary text-white p-5 my-5 border">
+    <h3>Create Member Details</h3>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Member Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="txtMemberName" id="txtMemberNamess">
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <label class="col-sm-2 col-form-label">Member Role</label>
+        <select class="col-sm-3 col-form-select" id="ddlMemberRole" name="ddlMemberRole">
+            <option value="0" selected="selected">---Select Role---</option>
+            {% for data in role_data %}
+            <optgroup>
+                <option value="{{ data.role_id }}">{{ data.role_name }}
+                </option>
+            </optgroup>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <div style="text-align:center">
+            <button class="btn btn-primary" id="btnCustomerSave" type="submit">Save</button>
+            <a href='{% url "library_management" %}' class="btn btn-primary" type="button" id='btnSaveMember' value="SaveMember">Cancel</button></a>
+        </div>
+    </div>
+</div>
+</form>
+
+{% endblock %}

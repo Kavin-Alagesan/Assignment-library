@@ -1,0 +1,115 @@
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #7abecc !important;
+}
+
+.user_card {
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #74cfbf;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+
+.form_container {
+    margin-top: 20px;
+}
+
+#form-title {
+    color: #fff;
+}
+
+.login_btn {
+    width: 100%;
+    background: #0181ac !important;
+    color: white !important;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: #f7ba5b !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #022891;
+    background: #022891;
+    background: -webkit-linear-gradient(top left, #022891, #629AE0);
+    background: -moz-linear-gradient(top left, #022891, #629AE0);
+    background: linear-gradient(to bottom right, #022891, #629AE0);
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+.navbar-custom {
+    background-color:#003d66;
+  }
+  .navbar-custom .navbar-brand,
+  .navbar-text {
+      color: white;
+      font-style: bold  ;
+  }
+
+  th {
+    text-align: center;
+  }
